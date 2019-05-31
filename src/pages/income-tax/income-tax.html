@@ -1,0 +1,37 @@
+<ion-header>
+
+    <ion-navbar color="header">
+        <ion-title>Income Tax</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-item >
+        <ion-label>I want</ion-label>
+        <ion-select interface="popover"  [(ngModel)]="selectservice">
+            <ion-option  *ngFor="let item of services" [value]="item.id">{{item.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item >
+        <ion-label>Select Year</ion-label>
+        <ion-select interface="popover"  [(ngModel)]="selectyear">
+            <ion-option  *ngFor="let item of years" [value]="item.id">{{item.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-textarea placeholder="Note" rows="4" [(ngModel)]="note"></ion-textarea>
+    </ion-item>
+    <button ion-button (click)="uploadimage()" icon-right>
+        Browse file
+       <ion-icon name="md-document"></ion-icon>
+    </button>
+     <span>{{filename}}</span>
+       <!-- Float the icon right -->
+    <div class="button_div">
+        <button ion-button  block>
+            Submit
+      </button>
+    </div>
+</ion-content>

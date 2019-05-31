@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar color="header">
+      <ion-title>CA App</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h5> My Account </h5>
+  <form [formGroup]="register" (ngSubmit)="logForm()">
+    <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" formControlName="Name"></ion-input>
+    </ion-item>
+    <div padding-horizontal>
+        <div class="alert" *ngIf="!register.controls['Name'].valid && register.controls['Name'].touched">Please Enter a name</div>
+    </div>
+    <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" formControlName="Email"></ion-input>
+    </ion-item>
+    <div padding-horizontal>
+        <div class="alert" *ngIf="!register.controls['Email'].valid && register.controls['Email'].touched">Please Enter a valid mail id</div>
+    </div>
+    <ion-item>
+        <ion-label floating>Mobile Number</ion-label>
+        <ion-input type="tel" formControlName="Mobile"></ion-input>
+    </ion-item>
+    <div padding-horizontal>
+        <div class="alert" *ngIf="!register.controls['Mobile'].valid && register.controls['Mobile'].touched">Please Enter a mobile number</div>
+    </div>
+    <ion-item>
+      <ion-textarea placeholder="Enter address" rows="4" formControlName="address"></ion-textarea>
+    </ion-item>
+  <!-- <div padding-horizontal>
+      <div class="alert" *ngIf="!register.controls['address'].valid && register.controls['address'].touched">Enter address</div>
+  </div> -->
+  <ion-list radio-group (ionChange)="selectedValue($event)">
+    <ion-row>
+      <ion-col col-6>
+          <ion-item>
+              <ion-radio item-left value="male" checked></ion-radio>
+              <ion-label>Male</ion-label>
+          </ion-item>
+      </ion-col>
+      <ion-col col-6>
+          <ion-item>
+              <ion-radio item-left value="female"></ion-radio>
+              <ion-label>Female</ion-label>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+</ion-list>
+    <!-- Float the icon right -->
+    <div class="button_div">
+        <button ion-button [disabled]="!register.valid" block icon-right>
+            Save
+        <ion-icon name="log-in"></ion-icon>
+      </button>
+    </div>
+</form>
+</ion-content>

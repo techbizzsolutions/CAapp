@@ -1,0 +1,9 @@
+page-dashboard {
+    .tabs-md .tabbar {
+        background: #bf0000 !important;
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        color: white;
+        padding: 0;
+    }
+}

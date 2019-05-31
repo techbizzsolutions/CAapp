@@ -1,0 +1,49 @@
+<ion-header>
+
+    <ion-navbar color="header">
+        <ion-title>Health Insurrance</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="register">
+        <ion-item >
+            <ion-label>Select sum assured amount</ion-label>
+            <ion-select interface="popover"  [(ngModel)]="amount" [ngModelOptions]="{standalone: true}">
+                <ion-option  *ngFor="let item of amounts" [value]="item.id">{{item.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        <ion-item>
+            <ion-label floating>No of Adult</ion-label>
+            <ion-input type="number" formControlName="adult"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['adult'].valid && register.controls['adult'].touched">Please Enter adult</div>
+        </div>
+        <ion-item>
+            <ion-label floating>No of Childern</ion-label>
+            <ion-input type="number" formControlName="child"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['child'].valid && register.controls['child'].touched">Please Enter Childern</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Age</ion-label>
+            <ion-input type="number" formControlName="age"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['age'].valid && register.controls['age'].touched">Please Enter age</div>
+        </div>
+        <ion-item>
+            <ion-textarea placeholder="Note" rows="4" formControlName="note"></ion-textarea>
+        </ion-item>
+         <!-- Float the icon right -->
+      <div class="button_div">
+          <button ion-button [disabled]="!register.valid" block icon-right (click)="logForm()">
+          submit
+    </button>
+      </div>
+    </form>
+</ion-content>

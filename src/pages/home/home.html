@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar color="header">
+      <ion-title>CA App</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+      <ion-col col-6 (click)="openpage('PortfolioPage')">
+          <button class="maintitle" ion-button  block >
+              PORTFOLIO
+        </button>
+       </ion-col>
+    <ion-col col-6 (click)="openpage('IncomeTaxPage')">
+        <button class="maintitle" ion-button  block >
+            INCOME TAX
+      </button>
+    </ion-col>
+    <ion-col col-6 (click)="openpage('HealthInsurrancePage')">
+        <button class="maintitle" ion-button  block >
+            HEALTH INSURRANCE
+      </button>
+     </ion-col>
+     <ion-col col-6 (click)="openpage('MftransectionPage')">
+        <button class="maintitle" ion-button  block >
+            MF TRANSECTION
+      </button>
+     </ion-col>
+     <ion-col col-6 (click)="openpage('RequestReportPage')">
+        <button class="maintitle" ion-button  block >
+            REQUEST REPORT
+      </button>
+     </ion-col>
+     <ion-col col-6 (click)="openpage('OtherServicesPage')">
+        <button class="maintitle" ion-button  block >
+            OTHER SERVICES
+      </button>
+     </ion-col>
+  </ion-row>
+</ion-content>

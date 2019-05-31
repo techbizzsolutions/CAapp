@@ -1,0 +1,34 @@
+<ion-header>
+
+    <ion-navbar color="header">
+        <ion-title>MF Transections</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-item-group>
+        <ion-row *ngFor="let item of mf;">
+            <ion-col col-8>
+                <ion-item>
+                    <ion-label>{{item.name}}</ion-label>
+                    <ion-checkbox [(ngModel)]="item.selected" ></ion-checkbox>
+                </ion-item>
+            </ion-col>
+            <ion-col col-4>
+                <ion-item>
+                    <ion-input type="number" [(ngModel)]="item.total" placeholder="amount"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-item-group>
+    <ion-item>
+        <ion-textarea placeholder="Note" rows="4" [(ngModel)]="note"></ion-textarea>
+    </ion-item>
+    <div class="button_div">
+        <button ion-button  block>
+            Submit
+      </button>
+    </div>
+</ion-content>

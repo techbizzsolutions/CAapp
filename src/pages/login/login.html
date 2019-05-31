@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="header">
+      <ion-title>CA App</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h5>Register</h5>
+  <form [formGroup]="register" (ngSubmit)="logForm()">
+      <ion-item>
+          <ion-label floating>Mobile</ion-label>
+          <ion-input type="tel" formControlName="Username"></ion-input>
+      </ion-item>
+      <div padding-horizontal>
+          <div class="alert" *ngIf="!register.controls['Username'].valid && register.controls['Username'].touched">Please Enter a User name</div>
+      </div>
+      <!-- Float the icon right -->
+      <div class="button_div">
+          <button ion-button [disabled]="!register.valid" block icon-right>
+          Login
+      <ion-icon name="log-in"></ion-icon>
+    </button>
+      </div>
+  </form>
+</ion-content>
